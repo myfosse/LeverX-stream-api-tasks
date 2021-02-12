@@ -1,19 +1,20 @@
-import entity.Student;
-import worker.StudentWorker;
+import static worker.StudentWorker.generateListOfStudents;
+import static worker.StudentWorker.getAverageRatingForSubjectFromListOfStudents;
 
-import java.util.*;
+import entity.Student;
+
+import java.util.List;
 
 /** @author Andrei Yahorau */
 public class StudentStart {
   public static void main(String[] args) {
 
-    final List<Student> students = StudentWorker.generateListOfStudent();
+    final List<Student> students = generateListOfStudents();
     final String subjectNameToGetAverageScore = "subject_1";
 
     System.out.println(students.toString());
 
     System.out.println(
-        StudentWorker.getAverageRatingForSubjectFromListOfStudents(
-            students, subjectNameToGetAverageScore));
+        getAverageRatingForSubjectFromListOfStudents(students, subjectNameToGetAverageScore));
   }
 }

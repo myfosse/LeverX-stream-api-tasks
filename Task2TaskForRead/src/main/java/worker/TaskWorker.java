@@ -2,6 +2,7 @@ package worker;
 
 import entity.Task;
 import entity.TaskType;
+import lombok.experimental.UtilityClass;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -11,9 +12,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /** @author Andrei Yahorau */
+@UtilityClass
 public class TaskWorker {
 
-  public static String getFirstFiveReadingTasksSortedByCreatedOnTimeAtOneStringByComma(
+  public String getFirstFiveReadingTasksSortedByCreatedOnTimeToSingleStringByComma(
       final List<Task> tasks) {
     return tasks.stream()
         .filter(t -> t.getType().equals(TaskType.READING))
@@ -23,7 +25,8 @@ public class TaskWorker {
         .collect(Collectors.joining(", "));
   }
 
-  public static List<Task> generateListOfTasks() {
+  public List<Task> generateListOfTasks() {
+
     Task task1 =
         new Task(
                 "Read Version Control with Git book",
