@@ -1,19 +1,26 @@
 package worker;
 
-import entity.Student;
-import lombok.experimental.UtilityClass;
+import static java.util.stream.Collectors.toList;
 
+import static constant.StudentWorkerConstant.AMOUNT_OF_STUDENTS;
+import static constant.StudentWorkerConstant.AMOUNT_OF_SUBJECTS;
+import static constant.StudentWorkerConstant.STUDENT_RANDOM_NAME_PREFIX;
+import static constant.StudentWorkerConstant.SUBJECT_RANDOM_NAME_PREFIX;
+import static constant.StudentWorkerConstant.MAX_SUBJECT_MARK;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 
-import static config.StudentWorkerConstant.AMOUNT_OF_STUDENTS;
-import static config.StudentWorkerConstant.AMOUNT_OF_SUBJECTS;
-import static config.StudentWorkerConstant.STUDENT_RANDOM_NAME_PREFIX;
-import static config.StudentWorkerConstant.SUBJECT_RANDOM_NAME_PREFIX;
-import static config.StudentWorkerConstant.MAX_SUBJECT_MARK;
-import static java.util.stream.Collectors.toList;
+import lombok.experimental.UtilityClass;
+
+import entity.Student;
 
 /** @author Andrei Yahorau */
 @UtilityClass
@@ -27,6 +34,27 @@ public class StudentWorker {
         .mapToDouble(s -> s.getRating().getOrDefault(subject, 0))
         .average()
         .orElse(0);
+  }
+
+  public Map<String, List<String>> getAllSubjectsWithListOfStudentsWithMark(
+      final List<Student> students) {
+
+    Set<String> subjects = new HashSet<>();
+    students.stream().map(Student::getSubjects).forEach(subjects::addAll);
+
+    Map<String, List<String>> answer = new HashMap<>();
+    subjects.forEach(
+        sub -> {
+          List<String> temp = new ArrayList<>();
+          for (Student student : students) {
+            if (student.getSubjects().contains(sub)) {
+              temp.add(student.getName() + " " + student.getRating().get(sub));
+            }
+          }
+          answer.put(sub, temp);
+        });
+
+    return answer;
   }
 
   public List<Student> generateListOfStudents() {

@@ -1,8 +1,8 @@
 import static worker.StudentWorker.*;
 
-import entity.Student;
-
 import java.util.List;
+
+import entity.Student;
 
 /** @author Andrei Yahorau */
 public class StudentStart {
@@ -13,7 +13,9 @@ public class StudentStart {
 
     System.out.println(students.toString());
 
-    System.out.println(
-        getAverageRatingForSubjectFromListOfStudents(students, subjectNameToGetAverageScore));
+    System.out.println(getAllSubjectsWithListOfStudentsWithMark(students));
+
+    //    System.out.println(
+    //        getAverageRatingForSubjectFromListOfStudents(students, subjectNameToGetAverageScore));
   }
 }

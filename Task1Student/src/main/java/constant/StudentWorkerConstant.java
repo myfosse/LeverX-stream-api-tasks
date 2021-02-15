@@ -1,6 +1,8 @@
-package config;
+package constant;
 
 import static lombok.AccessLevel.PRIVATE;
+
+
 import lombok.NoArgsConstructor;
 
 /** @author Andrei Yahorau */

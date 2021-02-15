@@ -1,9 +1,10 @@
 package entity;
 
-import lombok.Data;
-
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+
+import lombok.Data;
 
 /** @author Andrei Yahorau */
 @Data
@@ -20,5 +21,9 @@ public class Student {
   public Student rate(final String subject, final Integer rate) {
     rating.put(subject, rate);
     return this;
+  }
+
+  public Set<String> getSubjects() {
+    return rating.keySet();
   }
 }
