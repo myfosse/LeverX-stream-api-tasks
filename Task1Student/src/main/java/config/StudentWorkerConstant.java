@@ -1,11 +1,11 @@
 package config;
 
-import lombok.AccessLevel;
+import static lombok.AccessLevel.PRIVATE;
 import lombok.NoArgsConstructor;
 
 /** @author Andrei Yahorau */
-@NoArgsConstructor(access = AccessLevel.PRIVATE)
-public class StudentWorkerConfig {
+@NoArgsConstructor(access = PRIVATE)
+public class StudentWorkerConstant {
   public static final int AMOUNT_OF_STUDENTS = 10;
   public static final int AMOUNT_OF_SUBJECTS = 10;
   public static final int MAX_SUBJECT_MARK = 10;

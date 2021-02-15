@@ -8,11 +8,11 @@ import java.util.Random;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.stream.Stream;
 
-import static config.StudentWorkerConfig.AMOUNT_OF_STUDENTS;
-import static config.StudentWorkerConfig.AMOUNT_OF_SUBJECTS;
-import static config.StudentWorkerConfig.STUDENT_RANDOM_NAME_PREFIX;
-import static config.StudentWorkerConfig.SUBJECT_RANDOM_NAME_PREFIX;
-import static config.StudentWorkerConfig.MAX_SUBJECT_MARK;
+import static config.StudentWorkerConstant.AMOUNT_OF_STUDENTS;
+import static config.StudentWorkerConstant.AMOUNT_OF_SUBJECTS;
+import static config.StudentWorkerConstant.STUDENT_RANDOM_NAME_PREFIX;
+import static config.StudentWorkerConstant.SUBJECT_RANDOM_NAME_PREFIX;
+import static config.StudentWorkerConstant.MAX_SUBJECT_MARK;
 import static java.util.stream.Collectors.toList;
 
 /** @author Andrei Yahorau */

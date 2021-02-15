@@ -1,5 +1,4 @@
-import static worker.TaskWorker.generateListOfTasks;
-import static worker.TaskWorker.getFirstFiveReadingTasksSortedByCreatedOnTimeToSingleStringByComma;
+import static worker.TaskWorker.*;
 
 import entity.Task;
 

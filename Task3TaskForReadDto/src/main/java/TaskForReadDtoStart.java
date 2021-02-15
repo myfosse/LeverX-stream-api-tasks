@@ -1,5 +1,5 @@
-import static converter.TaskConverter.convertListOfTaskToListOfTaskDto;
-import static worker.TaskWorker.generateListOfTasks;
+import static converter.TaskConverter.*;
+import static worker.TaskWorker.*;
 
 import entity.Task;
 

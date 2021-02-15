@@ -1,5 +1,4 @@
-import static worker.StudentWorker.generateListOfStudents;
-import static worker.StudentWorker.getAverageRatingForSubjectFromListOfStudents;
+import static worker.StudentWorker.*;
 
 import entity.Student;
 
