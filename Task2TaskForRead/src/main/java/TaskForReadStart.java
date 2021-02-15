@@ -13,6 +13,9 @@ public class TaskForReadStart {
     System.out.println(tasks.toString());
 
     System.out.println(
+            getAllTasksGroupByFourParameters(tasks));
+
+    System.out.println(
         getFirstFiveReadingTasksSortedByCreatedOnTimeToSingleStringByComma(tasks));
   }
 }

@@ -8,7 +8,6 @@ import static constant.StudentWorkerConstant.STUDENT_RANDOM_NAME_PREFIX;
 import static constant.StudentWorkerConstant.SUBJECT_RANDOM_NAME_PREFIX;
 import static constant.StudentWorkerConstant.MAX_SUBJECT_MARK;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -36,23 +35,23 @@ public class StudentWorker {
         .orElse(0);
   }
 
+  public Set<String> getAllSubjects(final List<Student> students) {
+    Set<String> subjects = new HashSet<>();
+    students.stream().map(Student::getSubjects).forEach(subjects::addAll);
+    return subjects;
+  }
+
   public Map<String, List<String>> getAllSubjectsWithListOfStudentsWithMark(
       final List<Student> students) {
 
-    Set<String> subjects = new HashSet<>();
-    students.stream().map(Student::getSubjects).forEach(subjects::addAll);
-
     Map<String, List<String>> answer = new HashMap<>();
-    subjects.forEach(
-        sub -> {
-          List<String> temp = new ArrayList<>();
-          for (Student student : students) {
-            if (student.getSubjects().contains(sub)) {
-              temp.add(student.getName() + " " + student.getRating().get(sub));
-            }
-          }
-          answer.put(sub, temp);
-        });
+    getAllSubjects(students).forEach(sub -> {
+      List<String> temp = students.stream()
+              .filter(student -> student.getSubjects().contains(sub))
+              .map(student -> student.getName() + " " + student.getRating().get(sub))
+              .collect(toList());
+      answer.put(sub, temp);
+    });
 
     return answer;
   }

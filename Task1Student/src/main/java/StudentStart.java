@@ -15,7 +15,7 @@ public class StudentStart {
 
     System.out.println(getAllSubjectsWithListOfStudentsWithMark(students));
 
-    //    System.out.println(
-    //        getAverageRatingForSubjectFromListOfStudents(students, subjectNameToGetAverageScore));
+    System.out.println(
+        getAverageRatingForSubjectFromListOfStudents(students, subjectNameToGetAverageScore));
   }
 }
