@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 
 /** @author Andrei Yahorau */
 @NoArgsConstructor(access = PRIVATE)
-public class StudentWorkerConstant {
+public final class StudentWorkerConstant {
   public static final int AMOUNT_OF_STUDENTS = 10;
   public static final int AMOUNT_OF_SUBJECTS = 10;
   public static final int MAX_SUBJECT_MARK = 10;

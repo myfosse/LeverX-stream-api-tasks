@@ -11,9 +11,10 @@ public class StudentStart {
     final List<Student> students = generateListOfStudents();
     final String subjectNameToGetAverageScore = "subject_1";
 
-    System.out.println(students.toString());
+    System.out.println(students);
 
-    System.out.println(getAllSubjectsWithListOfStudentsWithMark(students));
+    System.out.println(getAllSubjectsWithStudentsMarks(students));
+    System.out.println(getAllSubjectsWithListOfStudentsMarks(students));
 
     System.out.println(
         getAverageRatingForSubjectFromListOfStudents(students, subjectNameToGetAverageScore));

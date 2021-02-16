@@ -11,14 +11,17 @@ import static entity.TaskType.WRITING;
 import static java.util.Arrays.asList;
 import static java.util.stream.Collectors.toList;
 
-import lombok.experimental.UtilityClass;
 
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+
+import entity.TaskGrouping;
+import lombok.experimental.UtilityClass;
 
 /** @author Andrei Yahorau */
 @UtilityClass
@@ -34,7 +37,7 @@ public class TaskWorker {
         .collect(joining(", "));
   }
 
-  public Map<Object, List<Task>> getAllTasksGroupByFourParameters(final List<Task> tasks) {
+  public Map<Object, List<Task>> getAllTasksGroupByFourParametersByFunctionGrouping(final List<Task> tasks) {
     return tasks.stream()
         .collect(groupingBy(
                 t -> Arrays.asList(
@@ -43,6 +46,12 @@ public class TaskWorker {
                         t.getTitle(),
                         t.getTags()),
                 toList()));
+  }
+
+  public Collection<List<Task>> getAllTasksGroupByFourParametersByClassGroping(final List<Task> tasks) {
+    return tasks.stream()
+            .collect(groupingBy(TaskGrouping::of))
+            .values();
   }
 
   public List<Task> generateListOfTasks() {

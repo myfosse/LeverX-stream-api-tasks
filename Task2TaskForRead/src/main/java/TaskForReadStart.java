@@ -1,8 +1,8 @@
 import static worker.TaskWorker.*;
 
-import entity.Task;
-
 import java.util.List;
+
+import entity.Task;
 
 /** @author Andrei Yahorau */
 public class TaskForReadStart {
@@ -10,10 +10,13 @@ public class TaskForReadStart {
 
     final List<Task> tasks = generateListOfTasks();
 
-    System.out.println(tasks.toString());
+    System.out.println(tasks);
 
     System.out.println(
-            getAllTasksGroupByFourParameters(tasks));
+            getAllTasksGroupByFourParametersByFunctionGrouping(tasks));
+
+    System.out.println(
+            getAllTasksGroupByFourParametersByClassGroping(tasks));
 
     System.out.println(
         getFirstFiveReadingTasksSortedByCreatedOnTimeToSingleStringByComma(tasks));

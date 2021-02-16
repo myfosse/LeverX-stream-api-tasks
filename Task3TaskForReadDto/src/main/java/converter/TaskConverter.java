@@ -1,20 +1,22 @@
 package converter;
 
-import dto.TaskDto;
-import entity.Task;
-
 import static java.util.stream.Collectors.toList;
+
+import java.util.List;
 
 import lombok.experimental.UtilityClass;
 
-import java.util.List;
+import dto.TaskDto;
+import entity.Task;
 
 /** @author Andrei Yahorau */
 @UtilityClass
 public class TaskConverter {
 
   public static List<TaskDto> convertListOfTaskToListOfTaskDto(final List<Task> tasks) {
-    return tasks.stream().map(TaskConverter::convertTaskToTaskDto).collect(toList());
+    return tasks.stream()
+            .map(TaskConverter::convertTaskToTaskDto)
+            .collect(toList());
   }
 
   public static TaskDto convertTaskToTaskDto(final Task task) {

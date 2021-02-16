@@ -11,7 +11,7 @@ public class TaskForReadDtoStart {
 
     final List<Task> tasks = generateListOfTasks();
 
-    System.out.println(tasks.toString());
+    System.out.println(tasks);
 
     System.out.println(convertListOfTaskToListOfTaskDto(tasks));
   }
