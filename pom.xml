@@ -9,11 +9,6 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>Task1</module>
-        <module>Task2</module>
-        <module>Task3</module>
-        <module>Task1</module>
-        <module>Task2</module>
         <module>Task3TaskForReadDto</module>
         <module>Task2TaskForRead</module>
         <module>Task1Student</module>
